@@ -1,0 +1,31 @@
+// 
+// _badge.scss
+// 
+
+.badge {
+  padding: 8px;
+  &-large {
+    font-size: 14px;
+  }
+}
+
+// Soft badge
+@mixin badge-variant-soft($bg) {
+  color: darken($bg, 60);
+  background-color: rgba($bg, 0.5);
+
+  &[href] {
+    @include hover-focus {
+      color: $bg;
+      text-decoration: none;
+      background-color: rgba($bg, 0.4);
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .badge-soft-#{$color} {
+    text-transform: capitalize;
+    @include badge-variant-soft($value);
+  }
+}

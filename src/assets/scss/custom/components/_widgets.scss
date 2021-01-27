@@ -1,0 +1,62 @@
+// 
+// Widgets.scss
+// 
+
+.mini-stats-wid{
+    .mini-stat-icon{
+        overflow: hidden;
+        position: relative;
+        &:before, &:after{
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 54px;
+            background-color: rgba($white,.1);
+            left: 16px;
+            transform: rotate(32deg);
+            top: -5px;
+            transition: all 0.4s;
+        }
+
+        &::after{
+            left: -12px;
+            width: 12px;
+            transition: all 0.2s;
+        }
+    }
+
+    &:hover{
+        .mini-stat-icon{
+            &::after{
+                left: 60px;
+            }
+        }
+    }
+}
+
+.time-tracker {
+    text-align: center;
+    h2 {
+        color: #000;
+        margin: 20px 0;
+        display: block;
+    }
+    &--icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        background: $cyan;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        cursor: pointer;
+        &:hover {
+            background: darken($cyan, 50%);
+        }
+        &.active {
+            background: $danger;
+        }
+    }
+}
